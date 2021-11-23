@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ш++ Lesson 2 assignment 1</title>
+  <link rel="stylesheet" href="./style/reset.css">
+  <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+  <h1>Ш++, Lesson 2. Assignment 1</h1>
+<!-- 1 -->
+  <div class="step">
+    <div class="assignment">
+      Создать на странице div, указать ему id, сделать ему такие стили, чтоб он выглядел как черный квадрат 100х100 пх. Добавить на страницу кнопку, по клику на эту кнопку блок должен исчезать.
+      исчезание нужно сделать всеми тремя способами (отдельная кнопка под каждый способ):
+      CSS (display: none), т.е. просто навесить стиль на элемент
+      JS (удаление элемента)
+      CSS+JS (навешивать на элемент класс hidden, а в CSS прописать такие стили чтоб они скрывали всё с классом hidden)
+    </div>
+    <div class="solution">
+      <div class="Buttons">
+        <button class="return">Return Rectangl</button>            
+        <button class="hideJS">JS</button>
+        <button class="hideCssAndJs">CSS+JS</button>      
+        <button class="hideCSS">CSS</button>
+      </div>
+      <div class="black"></div>  
+    </div>    
+  </div>
+<!-- 2 -->
+  <div class="step">
+    <div class="assignment">Сделать так, чтоб по клику на кнопку блок исчезал, если он есть, и чтоб появлялся, если он
+       был скрыт (способ CSS+JS).
+    </div>
+    <div class="solution" id="assignment2">
+      <div class="buttons">
+        <button class="hideAndReturnOnlyJS">Hide or return only JS</button>
+        <button class="hideAndReturnCssJS">Hide or return CSS+JS</button>
+      </div>      
+      <div class="black"></div>
+    </div>
+  </div>
+<!-- 3 -->
+  <div class="step">
+    <div class="assignment">Сделать на странице 5 таких блоков, дать им всем одинаковый класс, благодаря которому они все
+       станут выглядеть как черные квадраты. Сделать так чтоб они все одновременно скрывались/появлялись по нажатию на 
+       кнопку.
+    </div>
+    <div class="solution">
+      <div class="buttons">
+        <button class="hideAndReturn">Hide or return only JS</button>        
+      </div>
+      <div class="fiveRectangles">
+        <div class="black"></div>
+        <div class="black"></div>
+        <div class="black"></div>
+        <div class="black"></div>
+        <div class="black"></div>
+      </div>        
+    </div>
+  </div>
+<!-- 4 -->
+  <div class="step">
+    <div class="assignment"> Добавить на страницу инпут, в который можно ввести css selector (query selector) 
+      и при нажатии на кнопку будут скрываться/появляться те элементы, которые соответствуют этому селектору.
+    </div>
+    <div class="solution">
+      <div class="input">
+        <p>Enter css selector</p>
+        <input type="text" name="css selector" placeholder=".black" class="inputStep4">
+        <button class="inputValue">enter</button>
+      </div>      
+    </div>
+  </div>
+<!-- 5 -->
+  <div class="step">
+    <div class="assignment"> Добавить на страницу желтый квадрат, и сделать так чтоб при нажатии на него в первый раз
+       выводилась надпись "Привет" (alert), а при втором нажатии этот квадрат пропадал. (нужно менять функцию обработчик,
+        удалять первую и ставить вторую)
+    </div>
+    <div class="solution">
+        <button class="return">Return Rectangl</button>
+        <div class="yellowRectangle"></div>
+    </div>
+  </div>
+<!-- 6 -->
+  <div class="step">
+    <div class="assignment"> Добавить на страницу красный квадрат 50х50 пх, который будет появляться как только человек 
+      наводит курсор на кнопку, и скрываться как только человек убирает курсор с кнопки
+    </div>
+    <div class="solution">
+        <button class="showRect">hover to see a rectangle</button>
+        <div class="redRectangle"></div>
+    </div>
+  </div>
+<!-- 7 -->
+<div class="step">
+  <div class="assignment"> Добавить на страницу зеленый прямоугольник 50х20 пх, который будет появляться как только 
+    человек фокусируется на инпуте и исчезать как только человек начинает писать текст в этот инпут.
+  </div>
+  <div class="solution">
+    <input type="text" class="forGreenRect">
+    <div class="greenRect"></div>
+  </div>
+</div>
+<!-- 8 -->
+<div class="step">
+  <div class="assignment"> Добавить на страницу инпут и кнопку. Если в инпут положить ссылку, и нажать на кнопку 
+    то на странице появится картинка полученная по ссылке, которую ввели в инпут.
+  </div>
+  <div class="solution">
+    <div class="form">      
+      <input type="text" class="inputForImage" placeholder="https://klike.net/uploads/posts/2019-05/1556708032_1.jpg">
+      <button class="buttonForImage">Click and see your image</button>
+    </div>    
+    <div class="fieldForImage"></div>
+  </div>
+</div>
+<!-- 9 -->
+<div class="step">
+  <div class="assignment"> Превратить инпут в textarea, в которую можно вводить ссылки, каждую с новой строчки. 
+    При нажатии на кнопку на странице появится столько картинок, сколько ссылок ввели в textarea (картинки берутся по 
+    ссылкам).
+  </div>
+  <div class="solution">          
+     <textarea class="textArea" cols="50" rows="10" placeholder="https://klike.net/uploads/posts/2019-05/1556708032_1.jpg"></textarea>
+     <button class="textAreaBtn">Enter and show images</button>
+     <div class="images"></div>     
+  </div>
+</div>
+<!-- 10 -->
+<div class="step">
+  <div class="assignment"> Сделать блок в правом верхнем углу страницы, в котором в формате "Х: 123, У: 984" будут 
+    выводиться координаты курсора (обновляться в риалтайме).
+  </div>
+  <div class="solution">          
+    <div class="coordinates">
+      <span class="x">X: </span>
+      <span class="y">Y: </span>
+    </div>    
+  </div>
+</div>
+<!-- 11 -->
+<div class="step">
+  <div class="assignment"> Добавить в блок в правом верхнем углу информацию о том какой язык выбран в браузере 
+    у пользователя
+  </div>
+  <div class="solution">          
+    <div class="clientLanguage"></div>
+  </div>
+</div>
+<!-- 12 -->
+<div class="step">
+  <div class="assignment"> Добавить в блок в правом верхнем углу отображение широты и долготы на которой находится человек
+     (формат: "Ш: 34.23234, Д: 78.239482034")
+  </div>
+  <div class="solution">          
+    <div class="latitudeAndlongitude">
+      <span class="latitude"></span>
+      <span class="longitude"></span>
+    </div>
+  </div>
+</div>
+<!-- 13 -->
+<div class="step">
+  <div class="assignment"> Добавить на страницу три блока и сделать текст внутри них редактируемым, как в инпуте 
+    (но чтоб это был не нативный инпут). То, что человек введет в эти "инпуты" должно в них и оставаться при перезагрузке 
+    страницы (onload событие).<br>
+    1. для первого использовать localStorage<br>
+    2. для второго использовать cookies<br>
+    3. для третьего использовать sessionStorage<br>
+    Загуглите в чем разница между этими способами.    
+  </div>
+  <div class="solution">          
+    <div class="localStorage" contenteditable="true"></div>
+    <div class="cookies" contenteditable="true"></div>
+    <div class="sessionStorage" contenteditable="true"></div>
+  </div>
+</div>
+<!-- 14 -->
+<div class="step">
+  <div class="assignment"> Сделать кнопку, которая появляется когда мы уже пролистали экран вниз и по нажатию на которую
+     человека плавно кидает наверх страницы.   
+  </div>
+  <div class="solution">          
+    <button class="goUp">Go Up</button>
+  </div>
+</div>
+<!-- 15 -->
+<div class="step">
+  <div class="assignment"> Сделать два блока, один внутри другого. Навешать на каждый из них слушатель клика, 
+    который вызывает алерт. Сделать так чтоб при нажатии на маленький вызывался всего один алерт.   
+  </div>
+  <div class="solution">          
+    <div class="firstBlock">
+      <div class="secondBlock"></div>
+    </div>
+  </div>
+</div>
+<!-- 16 -->
+<div class="step">
+  <div class="assignment"> Сделать кнопку, по нажатию на которую появляется серый полупрозрачный квадрат на весь экран
+     и нельзя было скроллить страницу пока он не скроется. Скрывать квадрат по нажатию на него.   
+  </div>
+  <div class="solution">          
+    <button class="greyRectBtn">Click me</button>        
+  </div>
+</div>
+<!-- 17 -->
+<div class="step">
+  <div class="assignment">  Дано: &ltform>&ltinput type="submit" value="GO">&lt/form> Сделать так чтоб при нажатии 
+    на кнопку "GO" не перезагружалась страница.   
+  </div>
+  <div class="solution">          
+    <form><input type="submit" value="GO" class="noReload"></form>        
+  </div>
+</div>
+<!-- 18 -->
+<div class="step">
+  <div class="assignment">  Сделать красивый инпут type="file". Сделать чтоб при перетаскивании файла на этот инпут,
+     он красиво менялся (drag-n-drop).  Ну и когда файл уже выбран тоже.  
+  </div>
+  <div class="solution">          
+    <input type="file" class="fileInput">        
+  </div>
+</div>
+
+  <script src="./js/app.js"></script>
+  
+</body>
+</html>

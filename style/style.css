@@ -1,0 +1,181 @@
+body {
+  background-color: rgba(9, 129, 129, 0.541);
+}
+h1{
+  font-size: 24px;
+  text-align: center;
+  font-weight: bold;
+  margin: 10px 10px 0px 10px;
+  padding: 10px;
+}
+.assignment {
+  width: 90vw;
+  font-size: 16px;
+  margin: 0px 10px 0px 10px;
+  padding: 10px;
+  background-color: rgb(233, 199, 199);
+  border-radius: 20px;
+  border: 2px solid gray;
+  margin: 0 auto;
+}
+.step {
+  width: 100vw;    
+}
+.solution{
+  width: 90vw;
+  margin: 0px auto 10px;
+  background-color: gray;
+  border-radius: 20px;
+  border: 2px solid gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.black {
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  margin: 0px 5px 10px;
+}
+.step button{
+  font-size: 16px;
+  margin: 20px;
+  padding: 10px;
+  border: 2px solid gray;
+}
+.hidden{
+  display: none;
+}
+.fiveRectangles{  
+  display: flex; 
+}
+.input {
+  display: flex;
+  flex-direction: column;  
+}
+.input p {  
+  font-size: 18px;
+  font-weight: 700;
+  margin: 10px;
+}
+.yellowRectangle{
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  margin: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.redRectangle{
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  margin: 15px;
+  opacity: 0;
+}
+.forGreenRect{
+  margin: 10px;
+}
+.greenRect {
+  width: 50px;
+  height: 20px;
+  background-color: green;
+  margin: 15px;
+  opacity: 0;
+}
+.fieldForImage {
+  width: 200px;
+  height: 200px;
+  background-color: blanchedalmond;  
+  margin-bottom: 10px;
+}
+.textArea {
+  margin: 10px;
+}
+.coordinates , .clientLanguage, .latitudeAndlongitude{
+  width: 150px;
+  height: 20px;
+  background-color: blanchedalmond;
+  border-radius: 20px;
+  border: 2px solid black;
+  position: fixed;
+  top: 0;
+  left: calc(100% - 150px);
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+.coordinates span, .latitudeAndlongitude span {
+  padding: 15px;
+}
+.clientLanguage {
+  width: 80px;
+  left:calc(100% - 230px);
+  font-size: 16px;
+  font-weight: 500;
+}
+.latitudeAndlongitude{
+  width: 250px;  
+  left: calc(100% - 480px);
+}
+.localStorage, .cookies, .sessionStorage {
+  width: 100px;
+  height: 50px;
+  background-color: blanchedalmond;
+  border: 2px solid black;
+  margin: 5px;
+}
+.solution .goUp {
+  width: 50px;
+  height: 30px;
+  padding: 0px;
+  margin: 0px;   
+  font-size: 12px;
+  font-weight: 500;
+  position: fixed;
+  bottom: 0%;
+  left: calc(100% - 50px);  
+}
+.firstBlock {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.secondBlock {
+  width: 50px;
+  height: 50px;
+  background-color: green;
+}
+.grayRect {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: gray;
+  opacity: 0.5;  
+}
+.noReload{
+  cursor: pointer;
+}
+.fileInput {
+  margin: 10px;   
+}
+.fileAboveInput {
+  background-color: gray;
+  opacity: 0.5;
+  border: 2px solid black;
+  box-shadow: 10px 5px 5px black;
+}
+.fileIn {
+  background-color: green;
+  border: 2px solid green;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px green;
+}
