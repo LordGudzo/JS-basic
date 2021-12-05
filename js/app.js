@@ -226,7 +226,7 @@ secondBlock.addEventListener('click', () => {
   alert('second');
 })
 
-/* Stet 16 */
+/* Step 16 */
 const greyRectBtn = document.querySelector('.greyRectBtn');
 const greyRectField = document.querySelector('body');
 let grayRect = document.createElement('div');
@@ -241,12 +241,12 @@ grayRect.addEventListener('click', () => {
   greyRectField.style.overflow = 'visible';
 })
 
-/* Stet 17 */
+/* Step 17 */
 document.querySelector('.noReload').addEventListener('click', (e) => {
   e.preventDefault();
 })
 
-/* Stet 18 */
+/* Step 18 */
 const fileInput = document.querySelector('.fileInput');
 fileInput.addEventListener('dragover', changeInput);
 function changeInput() {
@@ -259,3 +259,90 @@ fileInput.addEventListener('drop', () => {
   fileInput.classList.remove('fileAboveInput');
   fileInput.classList.add('fileIn');
 })
+
+
+/* CSV parser */
+const csvTextField = document.querySelector('.csvText');
+const text = document.querySelector('.text');
+const csvParserBtn = document.querySelector('.csvParserBtn');
+const resultBtn = document.querySelector('.resultBtn');
+const result = document.querySelector('.csvResult');
+
+let afterParser;
+csvParserBtn.addEventListener('click', () => {
+  afterParser = csvParser();
+  alert('Parsed was sucesfully')
+});
+
+resultBtn.addEventListener('click', () => {
+  let textForReplace = text.innerHTML;
+  let textAfterReplace = replaceText(textForReplace);
+  result.innerHTML = textAfterReplace;
+})
+
+/* Parsing csv text and return object like 
+  {
+    Kyiv: {population: 1000000, rating: 1}, 
+    Kharkiv: {population: 500000, rating: 2}, 
+    …
+  } 
+*/
+function csvParser() {
+  /* Gets csv text from field */
+  let csvText = csvTextField.value;
+
+  /* Split the text into an array on a new line  */
+  let stringArray = csvText.split('\n');
+  
+  /* I guess that the length of the line cannot less then seven characters because we have a format 
+  (x,y,name, coordinates). Also I filtred the lines with "#".*/
+  let arrayAfterFilter = stringArray.filter((e) => {
+    if (e.length > 7 && !e.includes('#')){
+      return e;      
+    } 
+	});
+
+  /* Create map like {x: 1, y: 1, name: "Kyiv", population: 1000000} */
+  let cityMap = arrayAfterFilter.map((e) => {
+    let valueFromLine = e.split(",");
+    let map = {
+      x : valueFromLine[0],
+      y : valueFromLine[1],
+      name : valueFromLine[2],
+      population : valueFromLine[3]
+    }
+    return map;
+  })
+
+  /* Sorts cityMap by population and takes only ten the biggest cities */
+  let topTenCities = cityMap.sort(populationSort).slice(0,10);
+  function populationSort(a , b) {
+    return b.population - a.population;
+  }
+
+  /* Creates object like {
+    Kyiv: {population: 1000000, rating: 1}, 
+    Kharkiv: {population: 500000, rating: 2}, 
+    …
+  } */
+  let finalObjectWithCities = topTenCities.reduce((a, c, i) => {    
+    a[c.name] = {
+      population : c.population,
+      rating : i + 1
+    }    
+    return a;
+  }, {})
+  return finalObjectWithCities;
+}
+
+/* Replaces the value in the text that matches the keys after the parser  */
+function replaceText(textForReplace) {
+  Object.keys(afterParser).map((e) => {
+    textForReplace = textForReplace.replace(e, e + ` (${afterParser[e].rating} место в ТОП-10 самых крупных городов Украины,
+     население ${afterParser[e].population} человек)`)
+  })
+  
+  return textForReplace;
+}
+
+
